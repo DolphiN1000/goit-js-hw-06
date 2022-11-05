@@ -13,20 +13,22 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+const listWithId =  document.querySelector('ul#ingredients');
 
-const getItemTemplate = (ingredien) => {
-const lists = document.createElement('li');
-lists.textContent = ingredien;
+const lis = ingredients.map(ingredient => {
+  const lists = document.createElement('li');
+lists.textContent = ingredient;
 lists.classList.add('item');
 console.log(lists);
-}
+return lists;
+})
 
 
- const listWithId =  document.querySelector('#ingredients');
+
 
 console.log(listWithId);
-const lis = ingredients.map((ingredient) => {
-  getItemTemplate(ingredient);
-  console.log(ingredient);})
-console.log(lis);
-listWithId.insertAdjacentHTML('beforeend', lis.join(''));
+// const lis = ingredients.map((ingredient) => {
+//   getItemTemplate(ingredient);
+//   console.log(ingredient);})
+// console.log(lis);
+listWithId.append(...lis);
