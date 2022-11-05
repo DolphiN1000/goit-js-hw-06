@@ -16,17 +16,17 @@ const ingredients = [
 
 const getItemTemplate = (ingredien) => {
 const lists = document.createElement('li');
-lists.textContent = ingredien
+lists.textContent = ingredien;
 lists.classList.add('item');
 console.log(lists);
 }
 
-const refs = {
-  list: document.querySelector('ul#ingredients'),
-};
-console.log(refs);
+
+ const listWithId =  document.querySelector('#ingredients');
+
+console.log(listWithId);
 const lis = ingredients.map((ingredient) => {
   getItemTemplate(ingredient);
   console.log(ingredient);})
 console.log(lis);
-refs.list.insertAdjacentHTML('beforeend', lis.join(''));
+listWithId.insertAdjacentHTML('beforeend', lis.join(''));
