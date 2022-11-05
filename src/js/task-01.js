@@ -25,5 +25,5 @@ console.log(`Number of categories:`,catCount,`
 const catItem = document.querySelectorAll(`.item`);
     catItem.forEach(item => {
     console.log(`Category:`, item.firstElementChild.textContent);
-    console.log(`Elements:`, item.lastElementChild.children.length;
+    console.log(`Elements:`, item.lastElementChild.children.length);
 });
