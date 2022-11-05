@@ -14,10 +14,19 @@ const ingredients = [
   'Condiments',
 ];
 
-const getItemTemplate = (text) => `<li class="items">`;
+const getItemTemplate = (ingredien) => {
+const lists = document.createElement('li');
+lists.textContent = ingredien
+lists.classList.add('item');
+console.log(lists);
+}
 
 const refs = {
   list: document.querySelector('ul#ingredients'),
 };
-
-const lis = ingredients.map((ingredient) => getItemTemplate(ingredient));
+console.log(refs);
+const lis = ingredients.map((ingredient) => {
+  getItemTemplate(ingredient);
+  console.log(ingredient);})
+console.log(lis);
+refs.list.insertAdjacentHTML('beforeend', lis.join(''));
