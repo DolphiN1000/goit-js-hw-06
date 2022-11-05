@@ -14,6 +14,10 @@ const ingredients = [
   'Condiments',
 ];
 
+const getItemTemplate = (text) => `<li class="items">`;
 
-const list = document.querySelector('ul#ingredients');
+const refs = {
+  list: document.querySelector('ul#ingredients'),
+};
 
+const lis = ingredients.map((ingredient) => getItemTemplate(ingredient));
