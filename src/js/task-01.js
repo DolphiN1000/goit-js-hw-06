@@ -15,15 +15,16 @@
 // Category: Technologies
 // Elements: 5
 
-
 const catCount = document.querySelectorAll(`li.item`).length;
-console.log(`Number of categories:`,catCount,`
-`);
-
-
+console.log(
+  `Number of categories:`,
+  catCount,
+  `
+`
+);
 
 const catItem = document.querySelectorAll(`.item`);
-    catItem.forEach(item => {
-    console.log(`Category:`, item.firstElementChild.textContent);
-    console.log(`Elements:`, item.lastElementChild.children.length);
+catItem.forEach((item) => {
+  console.log(`Category:`, item.firstElementChild.textContent);
+  console.log(`Elements:`, item.lastElementChild.children.length);
 });
