@@ -24,8 +24,18 @@ const images = [
 ];
 
 const listGalls = document.querySelector("ul.gallery");
-const newEl = ({ url, alt }) => `<li><img src = "${url}" alt = "${alt}" width=750px ></li>` ;
+const newEl = ({ url, alt }) => `<li class='galList'><img src = "${url}" alt = "${alt}" width=450px ></li>` ;
 const listGall = images.map(newEl).join("");
 listGalls.insertAdjacentHTML("beforeend", listGall);
 // listGalls.style.flex = 'true';
 //  console.dir(listGalls);
+const headStyle = document.querySelector('head');
+const newStyle = `<style>
+.gallery {
+display: flex;
+flex-wrap: wrap;
+gap: 30px;
+list-style: none;
+}
+</style>`;
+headStyle.insertAdjacentHTML("beforeend", newStyle);
