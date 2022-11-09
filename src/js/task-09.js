@@ -25,10 +25,11 @@ function changeBg() {
 const href = {
   background: document.querySelector('body'),
   button: document.querySelector('.change-color'),
- 
+  color: document.querySelector('.color')
 }
 const handleClick = event => {
-  href.background.style.backgroundColor = getRandomHexColor()
+  href.background.style.backgroundColor = getRandomHexColor();
+href.color.textContent = href.background.style.backgroundColor
 }
 
 href.button.addEventListener('click', handleClick)

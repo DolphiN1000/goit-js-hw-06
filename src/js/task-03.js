@@ -24,6 +24,8 @@ const images = [
 ];
 
 const listGalls = document.querySelector("ul.gallery");
-const newEl = ({ url, alt }) => `<li><img src = "${url}" alt = "${alt}"></li>`;
+const newEl = ({ url, alt }) => `<li><img src = "${url}" alt = "${alt}" width=750px ></li>` ;
 const listGall = images.map(newEl).join("");
 listGalls.insertAdjacentHTML("beforeend", listGall);
+// listGalls.style.flex = 'true';
+//  console.dir(listGalls);
