@@ -25,3 +25,30 @@
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
+
+const contriolss = document.querySelector('controls');
+const createBtn = document.querySelector('data-create');
+const destroyBtn = document.querySelector('data-destroy');
+const inputValue = document.querySelector('input');
+const boxesEl = document.querySelector('#boxes');
+
+function onClick() {
+  const amount = inputValue.valueAsNumber;
+  if (!amount) return;
+  const makeBox = createBoxes(amount);
+  updatePages(markup);
+}
+
+function createBoxes(amount) {
+  const firstSize = 30;
+  for (let i = 0; i < amount; i+=1) {
+    const size = firstSize + i * 10;
+    const div = document.createElement('div');
+    div.style.cssText = width: ${size}px; backgroundColor: ${getRandomHexColor()};
+    boxes.appendChild(div);
+
+    function destroyBoxes() {
+      boxes.textContent = '';
+    }
+  }
+}
