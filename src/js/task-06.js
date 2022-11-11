@@ -24,13 +24,13 @@
 // }
 
 const refs = {
-    inputPassword: document.querySelector('input#validation-input'),
-    
+  inputPassword: document.querySelector("input#validation-input"),
 };
 
 // const ({data-length, })
 
-refs.inputPassword.addEventListener('input', (event) => {
-    event.currentTarget.value.length < refs.inputPassword.dataset.length ? refs.inputPassword.classList = 'invalid' : refs.inputPassword.classList = 'valid'
-
-} )
+refs.inputPassword.addEventListener("input", (event) => {
+  event.currentTarget.value.length < refs.inputPassword.dataset.length
+    ? (refs.inputPassword.classList = "invalid")
+    : (refs.inputPassword.classList = "valid");
+});

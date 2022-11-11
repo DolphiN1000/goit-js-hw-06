@@ -13,26 +13,23 @@
 //     .padStart(6, 0)}`;
 // }
 
-
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-};
-
-function changeBg() {
-
 }
+
+function changeBg() {}
 
 const href = {
-  background: document.querySelector('body'),
-  button: document.querySelector('.change-color'),
-  color: document.querySelector('.color')
-}
-const handleClick = event => {
+  background: document.querySelector("body"),
+  button: document.querySelector(".change-color"),
+  color: document.querySelector(".color"),
+};
+const handleClick = (event) => {
   href.background.style.backgroundColor = getRandomHexColor();
-href.color.textContent = href.background.style.backgroundColor
-}
+  href.color.textContent = href.background.style.backgroundColor;
+};
 
-href.button.addEventListener('click', handleClick)
+href.button.addEventListener("click", handleClick);
 
 // href.background.style.backgroundColor = '#030303';
 console.dir(href.background.style.backgroundColor);

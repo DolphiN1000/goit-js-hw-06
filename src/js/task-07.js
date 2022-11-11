@@ -5,11 +5,12 @@
 // <span id="text">Abracadabra!</span>
 
 const refs = {
-    controlSize: document.querySelector('input#font-size-control'),
-    textSize: document.querySelector('span#text'),
+  controlSize: document.querySelector("input#font-size-control"),
+  textSize: document.querySelector("span#text"),
 };
 
 refs.textSize.style.fontSize = `${refs.controlSize.value}px`;
 
-refs.controlSize.addEventListener('input', (event) => {refs.textSize.style.fontSize = `${refs.controlSize.value}px`})
-
+refs.controlSize.addEventListener("input", (event) => {
+  refs.textSize.style.fontSize = `${refs.controlSize.value}px`;
+});

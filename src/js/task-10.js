@@ -21,34 +21,44 @@
 
 // Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
 
-
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-const contriolss = document.querySelector('controls');
-const createBtn = document.querySelector('data-create');
-const destroyBtn = document.querySelector('data-destroy');
-const inputValue = document.querySelector('input');
-const boxesEl = document.querySelector('#boxes');
+const contriolss = document.querySelector("controls");
+const createBtn = document.querySelector("[data-create]");
+const destroyBtn = document.querySelector("[data-destroy]");
+const inputValue = document.querySelector("input");
+const boxesEl = document.querySelector("#boxes");
 
-function onClick() {
-  const amount = inputValue.valueAsNumber;
-  if (!amount) return;
-  const makeBox = createBoxes(amount);
-  updatePages(markup);
+function inputBoxes() {
+  const countBoxes = inputValue.valueAsNumber;
+  const arrBoxes = createBoxes(countBoxes);
+  refreshBoxes(arrBoxes);
 }
 
-function createBoxes(amount) {
-  const firstSize = 30;
-  for (let i = 0; i < amount; i+=1) {
-    const size = firstSize + i * 10;
-    const div = document.createElement('div');
-    div.style.cssText = width: ${size}px; backgroundColor: ${getRandomHexColor()};
-    boxes.appendChild(div);
-
-    function destroyBoxes() {
-      boxes.textContent = '';
+function createBoxes(countBoxes) {
+  console.log(countBoxes);
+  if (countBoxes == "NaN") {
+    alert("Pleas select number");
+  } else {
+    const arrBoxes = [];
+    let size = 30;
+    for (let i = 0; i < countBoxes; i += 1) {
+      const sting = `<div class = 'divBox' style='width: ${size}px; height: ${size}px; background: ${getRandomHexColor()}'></div>`;
+      size += 10;
+      arrBoxes.push(sting);
     }
+    return arrBoxes.join("");
   }
 }
+
+function refreshBoxes(arrBoxes = "") {
+  boxes.innerHTML = arrBoxes;
+}
+
+createBtn.addEventListener("click", inputBoxes);
+destroyBtn.addEventListener("click", () => {
+  refreshBoxes([]);
+});
+
