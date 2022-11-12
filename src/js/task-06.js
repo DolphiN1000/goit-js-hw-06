@@ -30,7 +30,7 @@ const refs = {
 // const ({data-length, })
 
 refs.inputPassword.addEventListener("input", (event) => {
-  event.currentTarget.value.length < refs.inputPassword.dataset.length
+  event.currentTarget.value.length !== Number(refs.inputPassword.dataset.length)
     ? (refs.inputPassword.classList = "invalid")
     : (refs.inputPassword.classList = "valid");
 });

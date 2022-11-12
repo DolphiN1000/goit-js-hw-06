@@ -10,9 +10,12 @@ console.log(refs.nameOutput.textContent);
 console.log(refs.nameInput.textContent);
 
 refs.nameInput.addEventListener(`input`, (event) => {
-  event.currentTarget.value === ''
-    ? (refs.nameOutput.textContent = 'Anonymous')
-    : (refs.nameOutput.textContent = event.currentTarget.value);
+  // event.currentTarget.value === ''
+  //   ? (refs.nameOutput.textContent = 'Anonymous')
+  //   : (refs.nameOutput.textContent = event.currentTarget.value);
+refs.nameOutput.textContent = event.currentTarget.value === '' ? 'Anonimus' : event.currentTarget.value;
+
+
     console.log(event.currentTarget.value);
 });
 
